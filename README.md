@@ -18,3 +18,5 @@ System umożliwia:
 - ustawianie przyjaznych adresów uri,
 - edycję title oraz meta-description
 - konfigurację kolejności stron w menu
+
+![Animation](https://user-images.githubusercontent.com/103251893/164948499-262b881a-a776-4f85-ab28-ef451f239409.gif)
