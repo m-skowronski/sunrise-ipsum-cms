@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap')
+    
+html
+    box-sizing: border-box
+
+*, *::before, *::after
+    box-sizing: border-box
+
+body
+    margin: 0
+    padding: 0
+    font-family: 'Ubuntu', sans-serif
+
+$yellow: rgba(255,157,10,1)
+$orange: rgba(255,93,0,1)
+$red: rgba(222,44,44,1)
+$dark: #2e2e2e
+$orange_ac: #ED4218
+
+.accent
+    color: $dark   
+.accent2
+    color: $orange_ac
+
+.error-wrap
+    text-align: center
+    padding: 0 15px
+.error
+    font-size: 126px
+    font-weight: 600
+    margin: 20px
+.error-txt
+    font-size: 42px
+
+.article
+    h2
+        margin-top: 80px
+        font-size: 22px
+
+.content-wrap
+    min-height: 100vh
+    display: flex
+    flex-direction: column
+    nav.menu
+        display: flex
+        justify-content: center
+        letter-spacing: 1.4px
+        line-height: 2em
+        position: relative
+        #hamburger
+            display: none
+            
+        .small-logo
+            transition: .4s
+            background-color: $dark
+            color: white
+            border-radius: 100%
+            width: 32px
+            height: 32px
+            padding: 0 4px
+            font-size: 36px
+            opacity: .4
+            position: absolute
+            left: 10px
+            top: 7px
+            span:first-child
+                position: absolute
+                left: 3px
+                top: -4px
+            span:nth-child(2)
+                position: absolute
+                right: 2px
+                bottom: -4px
+        .small-logo:hover
+            background-color: $orange_ac
+            cursor: pointer   
+        ul
+            list-style-type: none
+            margin: 0
+            padding: 8px 30px
+            flex-wrap: wrap
+            justify-content: center
+            li
+                display: inline-block
+                margin: 0 40px
+                a
+                    text-decoration: none
+                    color: $dark
+                a:hover
+                    color: $orange_ac
+                    transition: .2s
+                    cursor: pointer
+    .content
+        min-height: 100%
+    footer
+        background-color: $dark
+        color: white
+        padding: 0 15px
+        text-align: center
+        line-height: 2em
+        margin-top: auto
+        .info
+            padding: 25px 0 5px 0
+            font-size: 14px
+            a
+                text-decoration: none
+                color: white
+                transition: .2s
+            a:hover
+                color: #aaa
+            p
+                margin: 0
+                line-height: 0.85
+        .copy
+            font-weight: 300
+            font-size: 13px
+            margin: 0
+            padding-bottom: 10px
+
+.none-ul
+    display: flex
+
+@media screen and ( max-width: 870px )
+    .none-ul
+        display: none
+    ul.hide-menu
+        animation: hidemenu .4s ease forwards
+    
+    .content-wrap
+        nav.menu
+            height: 48px
+            position: relative
+            #hamburger
+                display: block
+                position: absolute
+                right: 15px
+                top: 15px
+                transition: .4s
+                i
+                    display: block
+                    height: 2px
+                    width: 30px
+                    background-color: $dark
+                i:nth-child(2)
+                    margin: 6px 0
+            .hamburger-active
+                i:first-child
+                    animation: cross1 .4s ease forwards
+                i:nth-child(2)
+                    animation: hide .4s ease forwards
+                i:nth-child(3)
+                    animation: cross2 .4s ease forwards
+            .hamburger-normal
+                i:first-child
+                    animation: hamb1 .4s ease forwards
+                i:nth-child(2)
+                    animation: show .4s ease forwards
+                i:nth-child(3)
+                    animation: hamb2 .4s ease forwards
+            #hamburger:hover
+                cursor: pointer
+                opacity: .6
+            #hamburger, a
+                z-index: 1000  
+            ul
+                flex-direction: column
+                min-height: 100vh
+                transform: translateY(-100%)
+                width: 100%
+                background-color: white
+                position: absolute
+                z-index: 900
+                padding: 0px 15px
+                transition: .4s
+                li:first-child
+                    margin-top: 48px
+                    border-top: 1px solid $orange_ac
+                li
+                    width: 100%
+                    margin: 0
+                    a
+                        display: inline-block
+                        width: 100%
+                        padding: 15px
+                        text-align: center
+            ul.active-ul
+                animation: showmenu .4s ease forwards
+            ul.hidden-ul
+
+@media screen and ( max-width: 420px )
+    .content-wrap
+        footer
+            .info
+                p
+                    span
+                        display: block
+        
+
+@import 'animations'
+@import 'article'
+@import 'header'

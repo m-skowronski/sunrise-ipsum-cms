@@ -1,0 +1,75 @@
+.all-wrap
+    .page-wrap     
+        nav.side-menu 
+            background-color: $menu_bg
+            width: 150px
+            position: fixed
+            height: 100%
+            border-right: 1px solid #444
+            padding-top: 36px
+            font-size: 13px
+            overflow-x: hidden
+            ul
+                list-style-type: none
+                margin: 0
+                padding: 0
+                display: flex
+                flex-direction: column
+                li
+                    display: inline-block
+                    position: relative
+                    i
+                        display: block
+                        width: 5px
+                        height: 100%
+                        position: absolute
+                        bottom: 0
+                        left: 0
+
+                    a, span
+                        display: block
+                        text-decoration: none
+                        color: #dadada
+                        padding: 10px 0
+                        padding-left: 10px                        
+                    a:hover, span:hover
+                        background-color: #1c1c1c
+                        transition: .2s
+                        cursor: pointer
+                        color: $white 
+                    ul.submenu
+                        height: 0px
+                        transition: .3s ease-in-out
+                        overflow: hidden
+                .active
+                    i
+                        background-color: $orange_ac
+                .active, .opened
+                    background-color: #1c1c1c
+                    transition: .2s
+                    span, a
+                        color: $white
+                    ul.submenu
+                        background-color: #1c1c1c
+                        height: 69px
+                        li
+                            a
+                                background-color: #1c1c1c
+                                color: #dadada
+                            a:hover
+                                color: $white
+                            .link-active
+                                color: $white         
+                            
+
+@media screen and ( max-width: 600px )
+    .all-wrap
+        .page-wrap     
+            nav.side-menu
+                padding-top: 64px
+                
+@media screen and ( max-width: 420px )
+    .all-wrap
+        .page-wrap
+            nav.side-menu
+                padding-top: 78px

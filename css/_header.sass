@@ -1,0 +1,57 @@
+.content-wrap
+    .top-wrap
+        flex-direction: column
+        padding-bottom: 30px
+        display: flex
+        background: $orange_ac
+        width: 100%
+        color: white
+        justify-content: center
+        header.sunrise 
+            margin-bottom: 0
+            align-self: center
+            margin: 40px 0 10px 0
+            display: flex
+            justify-content: center
+            font-weight: 500
+            .sun
+                height: 100px
+                width: 100px
+                min-height: 100px
+                min-width: 100px
+                margin-left: 0
+                border-radius: 100%
+                background: $orange
+                background: linear-gradient(0deg, $red 40%, $orange 70%, $yellow 100%)
+                color: white
+                position: relative
+                .brand
+                    font-size: 20px
+                    position: absolute
+                    letter-spacing: 2px
+                    left: -20px
+        .heading
+            margin: 0
+            padding: 0px 50px
+            text-align: center
+            width: auto
+            align-self: center
+            max-width: 700px
+            span
+                margin: 20px 0
+                font-size: 26px
+                font-weight: 600
+                span
+                    color: black
+            p
+                font-weight: 300
+                font-size: 15px
+
+
+                        
+@media screen and ( max-width: 420px )
+    .content-wrap
+        .top-wrap
+            .heading
+                padding: 0 15px
+     

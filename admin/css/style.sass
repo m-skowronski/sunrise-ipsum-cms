@@ -1,0 +1,331 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap')
+    
+html
+    box-sizing: border-box
+
+*, *::before, *::after
+    box-sizing: border-box
+
+body
+    margin: 0
+    padding: 0
+    font-family: 'Ubuntu', sans-serif
+
+$bg: #202020 
+$menu_bg: #2e2e2e
+$orange_ac: #ff821c
+$white: #fcfcfc
+$greyish: #ffdacb
+
+.accent
+    color: $orange_ac
+
+
+.all-wrap
+    background-color: $bg
+    font-weight: 300
+    .user-bar
+        position: fixed
+        width: 100%
+        z-index: 99
+        display: grid
+        grid-template-columns: 1fr auto 1fr
+        background-color: $menu_bg
+        color: $white
+        padding-left: 50px
+        padding-bottom: 3px
+        padding-top: 3px
+        height: 35px
+        align-items: center
+        border-bottom: 1px solid #444
+        .logo
+            letter-spacing: 1.4px
+            line-height: 2em
+            .small-logo
+                transition: .4s
+                background-color: $white
+                color: $menu_bg
+                border-radius: 100%
+                width: 32px
+                height: 32px
+                padding: 0 4px
+                font-size: 36px
+                position: absolute
+                left: 10px
+                top: 2px
+                transform: scale(0.7)
+                span:first-child
+                    position: absolute
+                    left: 3px
+                    top: -4px
+                span:nth-child(2)
+                    position: absolute
+                    right: 2px
+                    bottom: -4px
+            p
+                line-height: 1em
+        p
+            margin: 0
+        .hello
+            font-size: 14px
+            width: auto
+            text-align: right
+            margin: 0 15px
+            
+        .logout-button
+            margin-right: 15px
+            text-align: right
+            input
+                background: none
+                color: $white
+                border: none
+                padding: 6px 1px
+                outline: none
+                line-height: .9em
+                transition: .13s ease
+                margin-bottom: 0px
+            input:hover
+                cursor: pointer
+                color: $orange_ac
+
+    
+@import 'menu'
+
+.all-wrap
+    .page-wrap
+        display: flex
+        .content-wrap
+            min-height: 100vh
+            color: $white
+            padding-top: 36px
+            padding-left: 150px
+
+
+@media screen and ( max-width: 600px )
+    .all-wrap
+        .user-bar
+            height: 64px
+            grid-template-columns: 1fr 1fr
+            .logo
+                order: 1
+                p
+                    margin-top: 8px
+                .small-logo
+                    top: 16px    
+            .hello
+                text-align: left
+                letter-spacing: .4px
+                font-size: 12px
+                padding-right: 6px
+                margin: 10px 0
+                order: 3
+            .logout-button
+                order: 2
+                margin-top: 0px
+                grid-row: span 2
+        .page-wrap
+            .content-wrap
+                padding-top: 64px
+
+@media screen and ( max-width: 420px )
+    .all-wrap
+        .user-bar
+            height: 77px
+            .logo
+                .small-logo
+                    top: 22.5px
+            padding-top: 10px
+            padding-bottom: 10px
+            .logout-button
+                text-align: center
+                margin-right: 0
+        .page-wrap
+            .content-wrap
+                padding-top: 78px
+
+@import 'mixins'            
+@include scrollbars(5px, #474747)
+
+.content-wrap
+    width: 100%
+    .content
+        h2
+            color: #efefef
+            margin: 32px 37px 0 38px
+        .message
+            text-align: center
+            width: 100%
+            color: #efefef
+            background-color: #ff821c55
+            padding: 10px 
+            .ex-m
+                color: $orange_ac
+                font-weight: 500
+        .editor
+            font-size: 13px
+            padding: 40px
+            position: relative
+            input[name="page-name"]
+                font-size: 16px
+                width: 100%
+                margin-bottom: 20px
+                background: $menu_bg
+                padding: 10px
+            h3
+                color: $orange_ac
+                opacity: .9
+                margin-top: 40px
+            .friendly-url
+                color: $white
+                span
+                    width: 60px
+                input
+                    width: calc(100% - 60px)
+            .blue-code
+                color: lightblue
+            .tag
+                color: deepskyblue
+            .tox
+                margin: 15px auto
+                width: 100%
+                min-height: 350px
+                max-width: 100%
+            input
+                color: white
+                outline: none
+                border: none
+                background-color: transparent
+            input[type=submit]
+                display: block
+                margin-left: auto
+                background-color: transparent
+                color: $white
+                border: none
+                width: 50px
+                font-weight: 500
+                margin-top: 10px
+                font-size: 42px
+                transition: .2s ease
+            input[type=submit]:hover
+                cursor: pointer
+                color: $orange_ac
+                opacity: .95
+                transform: scale(120%)
+            input[name="title"]
+                display: block
+                margin-left: 20px
+                overflow-wrap: break-word
+                width: calc(100% - 20px)
+                padding: 5px
+            .title-wrap, .desc-wrap
+                margin-left: 20px
+                color: lightblue
+            .desc-wrap
+                margin-bottom: 30px
+                textarea[name="meta-desc"]
+                    width: 600px
+                    max-width: calc(100% - 20px)
+                    color: $orange_ac
+                    outline: none
+                    border: none
+                    background-color: transparent
+                    resize: none
+                    margin-bottom: -30px
+                    height: 47px
+                textarea[name="meta-desc"]:focus, textarea[name="meta-desc"]::placeholder
+                    color: white
+            .bold
+                font-weight: 500
+                margin: 10px 0
+            input[name="header"]
+                font-size: 26px
+                width: 100%
+
+        .sort
+            padding: 40px
+            margin: 0 auto
+            width: 100%
+            max-width: 600px
+            position: relative
+            #sortable
+                margin: 0 auto
+                width: 100%
+                max-width: 600px
+                background-color: #333
+                padding-left: 15px
+                font-weight: 500
+                li
+                    padding: 10px
+                    margin-left: 10px
+                    background-color: #474747
+                    input
+                        width: 100%
+                        height: 40px
+                        padding-left: 10px
+            input[type="submit"]
+                position: absolute
+                right: 0
+                margin-right: 40px
+                color: $orange_ac
+                background-color: transparent
+                opacity: .9
+                border: none
+                color: $white
+                font-weight: 500
+                font-size: 14px
+                margin-top: 10px
+                transition: .3s ease
+                letter-spacing: .06em
+            input[type="submit"]:hover
+                opacity: 1
+            input:hover
+                cursor: pointer
+
+        .display-pages
+            width: 100%
+            display: flex
+            flex-direction: column
+            padding: 10px
+            ol
+                padding-top: 15px
+                padding-bottom: 15px
+                list-style-type: decimal
+                background-color: #1a1a1a
+                li:first-child
+                    list-style-type: none
+                    margin-bottom: 15px
+                .li-inside
+                    display: flex 
+                    min-width: 100%
+                    width: 100%
+                    justify-content: space-between
+                    span
+                        width: 25%
+                        word-wrap: break-word
+                        padding: 5px
+            button
+                border: none
+                background-color: transparent
+                color: $white
+                padding: 0
+                margin: 0
+                margin-right: 10px
+                transition: .2s
+            button:hover 
+                cursor: pointer
+                opacity: .8
+            button.accent
+                color: $orange_ac
+
+
+                    
+            
+                    
+                    
+            
+        
+                
+                
+                
+                
+    

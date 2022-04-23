@@ -1,0 +1,143 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+body .login-wrap {
+  height: 100vh;
+  min-height: 400px;
+  width: 100%;
+  background: #2e2e2e;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .login-wrap form {
+  height: 120px;
+  width: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+body .login-wrap form .error-message {
+  position: absolute;
+  top: -70px;
+  font-size: 14px;
+  font-weight: 300;
+  text-align: justify;
+}
+
+body .login-wrap form .error-message .ex-m {
+  color: #ff821c;
+  font-weight: 400;
+}
+
+body .login-wrap form input {
+  width: 100%;
+  padding-top: 20px;
+  height: 100%;
+  border: none;
+  background-color: #2e2e2e;
+  color: white;
+  outline: none;
+}
+
+body .login-wrap form input:required {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+body .login-wrap form .pass {
+  margin-top: 20px;
+}
+
+body .login-wrap form .label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  border-bottom: 1px solid white;
+}
+
+body .login-wrap form .user-wrap, body .login-wrap form .pass-wrap {
+  position: relative;
+  height: 40%;
+}
+
+body .login-wrap form label:after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0;
+  border-bottom: 2px solid #ff821c;
+  left: 0;
+  bottom: -1px;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+body .login-wrap form label .label-content {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+body .login-wrap form input:focus + .label .label-content, body .login-wrap form input:valid + .label .label-content {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  font-size: 14px;
+  color: #ff821c;
+}
+
+body .login-wrap form input:focus + .label::after, body .login-wrap form input:valid + .label::after {
+  width: 100%;
+}
+
+body .login-wrap form .log-in {
+  width: auto;
+  padding: 0;
+  top: 70px;
+  position: absolute;
+  right: 0;
+  -webkit-transition: .13s ease;
+  transition: .13s ease;
+}
+
+body .login-wrap form .log-in:hover {
+  cursor: pointer;
+  color: #ff821c;
+}
+/*# sourceMappingURL=style.css.map */
