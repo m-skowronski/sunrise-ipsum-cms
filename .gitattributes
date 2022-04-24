@@ -1,6 +1,2 @@
-* linguist-vendored
-*.php linguist-vendored=false
-*.sass linguist-vendored=false
-.htaccess linguist-vendored=false
-*.js linguist-vendored=false
-*.min.js linguist-vendored=true
+admin/plugins/tinymce/* linguist-vendored
+*.css linguist-vendored
