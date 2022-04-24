@@ -1,2 +1,2 @@
-admin/plugins/tinymce/* linguist-vendored
+admin/plugins/** linguist-vendored
 *.css linguist-vendored
