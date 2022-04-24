@@ -1,7 +1,7 @@
 # sunrise-ipsum-cms
 Prosty system CMS stworzony na przełomie sierpnia i września 2020 roku w celu poszerzenia umiejętności z PHP.
 
-System korzysta z wtyczki TinyMCE
+System korzysta z edytora TinyMCE
 https://www.tiny.cloud/
 
 # Konfiguracja
